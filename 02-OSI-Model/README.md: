@@ -1,0 +1,64 @@
+# OSI Model
+
+## Why was the OSI Model created?
+
+Before the OSI Model, different companies used different networking rules and standards. Because of this, devices from one company could not communicate properly with devices from another company.
+
+To solve this problem, a common networking standard was introduced. This standard is known as the OSI (Open Systems Interconnection) Model.
+
+
+## What is the OSI Model?
+
+The OSI (Open Systems Interconnection) Model is a conceptual model that explains how data travels from one device to another over a network.
+
+It divides network communication into seven layers, and each layer has a specific responsibility.
+
+## Application Layer (Layer 7)
+
+The Application Layer is the top layer of the OSI Model. It provides network services to applications such as web browsers, email clients, and messaging applications.
+
+**Examples:**
+- Google Chrome
+- Microsoft Outlook
+- WhatsApp
+- Firefox
+
+---
+
+## Presentation Layer (Layer 6)
+
+The Presentation Layer is responsible for presenting data in a suitable format. It performs encryption, decryption, compression, and decompression before the data is sent or after it is received.
+
+**Example:**
+- HTTPS uses encryption to protect data while communicating over the Internet.
+
+---
+
+## Session Layer (Layer 5)
+
+The Session Layer is responsible for establishing, maintaining, and terminating communication sessions between two devices.
+
+**Example:**
+- A WhatsApp or Zoom video call starts a session, keeps it active during the conversation, and closes it when the call ends.
+
+---
+
+## Transport Layer (Layer 4)
+
+The Transport Layer is responsible for end-to-end communication between devices. It uses TCP for reliable communication and UDP for faster, connectionless communication. It also divides data into segments and uses port numbers to deliver data to the correct application.
+
+### TCP
+- Connection-oriented
+- Reliable communication
+- Uses Three-Way Handshake
+- Retransmits lost packets
+
+### UDP
+- Connectionless
+- Faster communication
+- Does not retransmit lost packets
+- Used for real-time applications
+
+**Examples:**
+- TCP: File download, Email, Banking
+- UDP: Online gaming, Video calls, Live streaming
