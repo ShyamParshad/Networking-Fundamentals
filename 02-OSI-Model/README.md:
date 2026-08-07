@@ -59,6 +59,61 @@ The Transport Layer is responsible for end-to-end communication between devices.
 - Does not retransmit lost packets
 - Used for real-time applications
 
+---
+
+## Network Layer (Layer 3)
+
+The Network Layer is responsible for logical addressing, routing, and packet forwarding. It uses IP addresses to identify the source and destination devices. Routers work at this layer and find the best path for packets to reach the destination.
+
+### Main Responsibilities
+
+- Logical Addressing (IP Address)
+- Routing
+- Packet Forwarding
+- Best Path Selection
+
+### Example
+
+When I open google.com, the Network Layer uses the destination IP address and sends the packet through different routers until it reaches Google's server.
+
+---
+
+## Data Link Layer (Layer 2)
+
+The Data Link Layer is responsible for communication within a Local Area Network (LAN). It uses MAC addresses to deliver frames between devices connected to the same network. Switches work at this layer.
+
+### Main Responsibilities
+
+- MAC Addressing
+- Frame Delivery
+- Error Detection
+- Communication inside LAN
+
+### ARP
+
+If a device knows the destination IP address but not the MAC address, it sends an ARP Request (Broadcast). The destination device replies with an ARP Reply (Unicast) containing its MAC address.
+
+### Example
+
+Before sending data to another device in the same LAN, my laptop uses ARP to find the destination MAC address.
+
+---
+
+## Physical Layer (Layer 1)
+
+The Physical Layer is the lowest layer of the OSI Model. It is responsible for transmitting data as bits (0s and 1s) through physical media such as Ethernet cables, fiber optics, or wireless signals.
+
+### Main Responsibilities
+
+- Transmit Bits (0 and 1)
+- Electrical Signals
+- Optical Signals
+- Wireless Signals
+
+### Example
+
+When I connect my laptop to a router using an Ethernet cable, the Physical Layer sends bits through the cable as electrical signals.
+
 **Examples:**
 - TCP: File download, Email, Banking
 - UDP: Online gaming, Video calls, Live streaming
