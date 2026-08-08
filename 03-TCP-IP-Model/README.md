@@ -86,3 +86,75 @@ Before sending data, TCP establishes a connection using three steps:
 
 After these three steps, the TCP connection is established and data transfer begins.
 
+### Port Numbers
+
+Port numbers help identify the correct service or application on a device.
+
+Common ports:
+
+- HTTP → 80
+- HTTPS → 443
+- DNS → 53
+- SSH → 22
+- RDP → 3389
+
+Example:
+
+Source: 192.168.1.74:53124
+Destination: 142.250.x.x:443
+
+Here, 53124 is a temporary source port and 443 is the destination port for HTTPS.
+
+### Source Port and Destination Port
+
+The source port is usually a temporary port assigned by the client device.
+
+The destination port identifies the service the client wants to communicate with.
+
+For example:
+
+text
+192.168.1.74:53124 → 142.250.x.x:443
+
+TCP Segmentation
+
+TCP divides large amounts of application data into smaller segments before transmission.
+
+Large Data
+    ↓
+TCP
+    ↓
+Segment 1
+Segment 2
+Segment 3
+
+Sequence Numbers
+
+TCP uses sequence numbers to keep track of transmitted data and maintain the correct order of segments.
+
+If a segment is lost, sequence numbers help TCP identify the missing data.
+
+Acknowledgment (ACK)
+
+TCP uses acknowledgments to confirm that data has been successfully received.
+
+Retransmission
+
+If TCP detects that data has been lost, it can retransmit the missing data to provide reliable delivery.
+
+Flow Control
+
+TCP uses flow control to prevent a fast sender from overwhelming a slower receiver.
+
+The receiver advertises a receive window to tell the sender how much data it can currently accept.
+
+Without flow control, a fast sender could send data faster than the receiver can process it, which could fill the receiver's buffer.
+
+TCP Reliability
+
+TCP provides reliable communication using multiple mechanisms:
+
+Sequence Numbers
+Acknowledgments
+Retransmission
+Flow Control
