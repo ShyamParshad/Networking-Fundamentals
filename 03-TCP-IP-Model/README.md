@@ -158,3 +158,85 @@ Sequence Numbers
 Acknowledgments
 Retransmission
 Flow Control
+
+---
+
+## Internet Layer
+
+The Internet Layer is responsible for logical addressing and routing packets between networks. It mainly uses IP addresses to identify the source and destination of network communication.
+
+### IP Address
+
+An IP address is a logical address used to identify and locate a device or network interface on an IP network. It helps routers determine where packets should be forwarded.
+
+### Source IP and Destination IP
+
+When a device sends a packet, the packet contains a source IP address and a destination IP address.
+
+Example:
+
+```text
+Source IP:      192.168.1.74
+Destination IP: 142.250.x.x
+```
+
+- **Source IP** → identifies where the packet came from.
+- **Destination IP** → identifies where the packet is going.
+
+### Routing
+
+Routers use routing tables to determine where packets should be forwarded.
+
+A routing table can contain information such as:
+
+- Destination Network
+- Next Hop
+- Outgoing Interface
+
+The router checks the destination IP against its routing table and selects the best available route.
+
+```text
+Destination Network   Next Hop       Interface
+142.250.0.0/16        10.0.0.1       eth1
+```
+
+### Next Hop
+
+A next hop is the next router or device to which a packet is forwarded on its journey toward the destination.
+
+```text
+Laptop → Router 1 → Router 2 → Router 3 → Server
+```
+
+Each router makes its own forwarding decision based on its routing table.
+
+### IP Packet
+
+When data reaches the Internet Layer, an IP header is added to the transport-layer data, creating an IP packet.
+
+```text
+Application Data
+       ↓
+TCP Segment
+       ↓
+IP Packet
+       ↓
+Frame
+       ↓
+Bits
+```
+
+An IP packet contains important information such as:
+
+- Source IP
+- Destination IP
+- Other IP header information
+- Transport-layer data
+
+### IP Address vs MAC Address
+
+IP addresses are used for logical addressing and routing, while MAC addresses are used for communication on the local network.
+
+```text
+IP Address  → Logical addressing / routing
+MAC Address → Local network communication
