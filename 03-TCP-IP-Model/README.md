@@ -329,42 +329,58 @@ New Frame
     ↓
 Next Hop
 
-Physical Transmission
+## Physical Layer
 
-At the Physical Layer, frames are transmitted as bits through the physical medium.
+The Physical Layer is responsible for transmitting raw data as bits (0s and 1s) through a physical or wireless medium.
 
-Application Data
-       ↓
-TCP Segment
-       ↓
-IP Packet
-       ↓
+It deals with the actual transmission of signals that carry the bits from one device to another.
+
+### Main Responsibilities
+
+- Transmits data as bits (0s and 1s)
+- Converts bits into physical signals
+- Carries signals through the transmission medium
+- Defines aspects of the physical connection between devices
+
+### Transmission Media
+
+Data can be transmitted through different physical or wireless media, such as:
+
+- Ethernet cables
+- Fiber-optic cables
+- Radio signals used by Wi-Fi
+
+### Example
+
+When a device sends data:
+
+text
 Frame
-       ↓
+  ↓
+Physical Layer
+  ↓
+Bits (0s and 1s)
+  ↓
+Electrical / Optical / Radio Signals
+  ↓
+Transmission Medium
+
+At the receiving device, the physical signals are converted back into bits.
+
+Transmission Medium
+        ↓
+Physical Signals
+        ↓
+Bits (0s and 1s)
+        ↓
+Frame
+
+The Physical Layer works with:
+
 Bits (0s and 1s)
 
-Encapsulation
+Key Point
 
-Data is encapsulated as it moves down the networking layers:
+The Physical Layer is responsible for the actual transmission of bits over a physical or wireless medium.
 
-Data
- ↓
-Segment
- ↓
-Packet
- ↓
-Frame
- ↓
-Bits
-
-At the receiving side, the process happens in reverse:
-
-Bits
- ↓
-Frame
- ↓
-Packet
- ↓
-Segment
- ↓
-Data
+It does not understand IP addresses, MAC addresses, ports, or applications. Its primary responsibility is the physical transmission of bits.
