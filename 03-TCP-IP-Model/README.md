@@ -237,6 +237,134 @@ An IP packet contains important information such as:
 
 IP addresses are used for logical addressing and routing, while MAC addresses are used for communication on the local network.
 
-```text
+text
 IP Address  → Logical addressing / routing
 MAC Address → Local network communication
+
+
+## Network Access Layer
+
+The Network Access Layer is responsible for delivering data across the local network. In the TCP/IP model, it combines the functions of the OSI Data Link Layer and Physical Layer.
+
+### MAC Address
+
+A MAC (Media Access Control) address is a Layer 2 address associated with a network interface. It is used for communication between devices on the local network.
+
+text
+IP Address  → Logical addressing and routing
+MAC Address → Local hop-to-hop communication
+
+ARP
+
+ARP (Address Resolution Protocol) is used to find the MAC address associated with a known IPv4 address on the local network.
+
+For example, if a laptop knows the router's IP address but does not know its MAC address, it sends an ARP Request.
+
+ARP Request → Broadcast
+
+"Who has 192.168.1.1?"
+
+The router responds with an ARP Reply:
+ARP Reply → Unicast
+
+"192.168.1.1 is my IP.
+My MAC is AA:BB:CC:DD:EE:FF."
+
+ARP Request → Broadcast
+ARP Reply → Unicast
+
+ARP works within the local network and is not forwarded across routers.
+
+Frame
+
+At the Data Link layer, an IP packet is encapsulated inside a frame.
+
+A basic Ethernet frame contains information such as:
+
+Destination MAC
+Source MAC
+EtherType
+IP Packet
+FCS
+
+TCP Segment
+     ↓
+IP Packet
+     ↓
+Frame
+
+Hop-by-Hop MAC Addressing
+
+When a packet travels through multiple routers, the Layer 2 frame changes at every hop.
+
+Example:
+
+Laptop → Router 1 → Router 2 → Google
+
+First hop:
+
+Source MAC      = Laptop MAC
+Destination MAC = Router 1 MAC
+
+Second hop:
+
+Source MAC      = Router 1 MAC
+Destination MAC = Router 2 MAC
+
+The destination IP normally remains the same while the Layer 2 MAC addresses change at each hop.
+
+New Frame at Each Router
+
+A router does not simply forward the old Layer 2 frame. It removes the old frame and creates a new frame for the next hop.
+
+Old Frame
+    ↓
+Router
+    ↓
+IP Packet is processed
+    ↓
+Routing Decision
+    ↓
+New Frame
+    ↓
+Next Hop
+
+Physical Transmission
+
+At the Physical Layer, frames are transmitted as bits through the physical medium.
+
+Application Data
+       ↓
+TCP Segment
+       ↓
+IP Packet
+       ↓
+Frame
+       ↓
+Bits (0s and 1s)
+
+Encapsulation
+
+Data is encapsulated as it moves down the networking layers:
+
+Data
+ ↓
+Segment
+ ↓
+Packet
+ ↓
+Frame
+ ↓
+Bits
+
+At the receiving side, the process happens in reverse:
+
+Bits
+ ↓
+Frame
+ ↓
+Packet
+ ↓
+Segment
+ ↓
+Data
