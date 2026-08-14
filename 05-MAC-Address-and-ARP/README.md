@@ -266,34 +266,25 @@ Laptop → R1 → R2 → R3 → Google
 
 The source and destination IP addresses normally remain the same during routing, although fields such as TTL change and NAT can modify addresses in networks using NAT.
 
-Packet vs Frame
-
-At Layer 3:
-
-IP Packet
-
-At Layer 2:
-
-Frame
+# Packet vs Frame
 
 A packet is encapsulated inside a frame before being transmitted over a Layer 2 link.
 
+
 Frame
-                           ┌───────────────────────────────┐
-                           │ Source MAC                    │
-                           │ Destination MAC               │
-                           │                               │
-                           │       IP Packet               │
-                           │ Source IP                     │
-                           │ Destination IP                │
-                           │                               │
-                           └───────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│ Destination MAC │ Source MAC │ Type │       IP Packet        │
+└──────────────────────────────────────────────────────────────┘
+                                      │
+                                      ├── Source IP
+                                      └── Destination IP
                            
 Therefore:
 
 MAC → Current Layer 2 hop
 IP  → Layer 3 destination
-Gratuitous ARP
+
+##Gratuitous ARP
 
 Gratuitous ARP (GARP) is used by a device to announce or update its own IP-to-MAC mapping on the local network.
 
