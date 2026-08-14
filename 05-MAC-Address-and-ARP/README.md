@@ -273,7 +273,7 @@ A packet is encapsulated inside a frame before being transmitted over a Layer 2 
 ~~~text
 Frame
 ┌──────────────────────────────────────────────────────────────┐
-│ Destination MAC │ Source MAC │ Type │       IP Packet       │
+│ Destination MAC │ Source MAC │ Type │       IP Packet        │
 └──────────────────────────────────────────────────────────────┘
                                       │
                                       ├── Source IP
