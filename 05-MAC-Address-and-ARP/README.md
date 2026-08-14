@@ -270,21 +270,24 @@ The source and destination IP addresses normally remain the same during routing,
 
 A packet is encapsulated inside a frame before being transmitted over a Layer 2 link.
 
-
+~~~text
 Frame
 ┌──────────────────────────────────────────────────────────────┐
-│ Destination MAC │ Source MAC │ Type │       IP Packet        │
+│ Destination MAC │ Source MAC │ Type │       IP Packet       │
 └──────────────────────────────────────────────────────────────┘
                                       │
                                       ├── Source IP
                                       └── Destination IP
-                           
+~~~
+
 Therefore:
 
-MAC → Current Layer 2 hop
-IP  → Layer 3 destination
+~~~text
+MAC → Layer 2 → Current-hop delivery
+IP  → Layer 3 → Logical addressing and routing
+~~~
 
-##Gratuitous ARP
+# Gratuitous ARP
 
 Gratuitous ARP (GARP) is used by a device to announce or update its own IP-to-MAC mapping on the local network.
 
