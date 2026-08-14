@@ -279,16 +279,16 @@ Frame
 A packet is encapsulated inside a frame before being transmitted over a Layer 2 link.
 
 Frame
-┌───────────────────────────────┐
-│ Source MAC                    │
-│ Destination MAC               │
-│                               │
-│       IP Packet               │
-│ Source IP                     │
-│ Destination IP                │
-│                               │
-└───────────────────────────────┘
-
+                           ┌───────────────────────────────┐
+                           │ Source MAC                    │
+                           │ Destination MAC               │
+                           │                               │
+                           │       IP Packet               │
+                           │ Source IP                     │
+                           │ Destination IP                │
+                           │                               │
+                           └───────────────────────────────┘
+                           
 Therefore:
 
 MAC → Current Layer 2 hop
